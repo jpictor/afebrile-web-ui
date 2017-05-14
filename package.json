@@ -11,8 +11,9 @@
   },
   "dependencies": {
     "lodash": "^4.17.4",
-    "material-ui": "^1.0.0-alpha.11",
+    "material-ui": "^1.0.0-alpha.14",
     "material-ui-icons": "^1.0.0-alpha.2",
+    "prop-types": "^15.5.10",
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.4",
     "react-tap-event-plugin": "^2.0.1",

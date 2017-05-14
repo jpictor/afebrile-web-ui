@@ -1,11 +1,19 @@
 import { get } from 'lodash'
 import { connect } from 'react-redux'
 import { toggleCard } from '../actions'
-import SimpleLayout from '../components/Layout'
+import CardList from '../components/CardList'
+import { isNonEmptyArray } from '../util'
+
+const getCardArray = (state) => {
+  if (isNonEmptyArray(state.postsByTopic.rootTopic.items)) {
+    return state.postsByTopic.rootTopic.items.filter(i => get(i, 'metadata.card.og.image'))
+  }
+  return []
+}
 
 const mapStateToProps = (state) => {
   return {
-    cards: state.postsByTopic.rootTopic.items.filter(i => get(i, 'metadata.card.og.image'))
+    cards: getCardArray(state)
   }
 }
 
@@ -15,9 +23,9 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-const VisibleCardList = connect(
+const CardListConnected = connect(
   mapStateToProps,
   mapDispatchToProps
-)(SimpleLayout)
+)(CardList)
 
-export default VisibleCardList
+export default CardListConnected

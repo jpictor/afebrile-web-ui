@@ -1,14 +1,10 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 import { createStyleSheet } from 'jss-theme-reactor'
 import customPropTypes from 'material-ui/utils/customPropTypes'
-import {
-  Card,
-  CardMedia,
-  CardContent,
-  CardActions,
-} from 'material-ui/Card'
+import Card, { CardMedia, CardContent, CardActions } from 'material-ui/Card'
 import Button from 'material-ui/Button'
-import Text from 'material-ui/Text'
+import Typography from 'material-ui/Typography'
 
 const styleSheet = createStyleSheet('SimpleMediaCard', () => ({
   card: {
@@ -31,8 +27,8 @@ const SimpleMediaCard = (props, context) => {
         <img className={classes.image} src={props.imageUrl} alt={props.title} />
       </CardMedia>
       <CardContent className={classes.cardContent}>
-        <Text type="headline" component="h2">{props.title}</Text>
-        <Text component="p">{props.text}</Text>
+        <Typography type="headline" component="h2">{props.title}</Typography>
+        <Typography component="p">{props.text}</Typography>
       </CardContent>
     </Card>
   )
