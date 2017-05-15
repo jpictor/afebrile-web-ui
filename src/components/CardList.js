@@ -30,7 +30,7 @@ const CardList = ({ cards, onCardClick }, context) => {
   return (
     <Grid container className={classes.root}>
       <Grid item xs={12}>
-        <Grid container justify="center" gutter={24}>
+        <Grid container gutter={24}>
           {cards.map(card =>
             <Grid key={card.id} className={classes.layoutItem} item xs={12} sm={6} md={4} lg={3} xl={3}>
               <SimpleMediaCard
